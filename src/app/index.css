@@ -75,6 +75,7 @@ h6 {
 
 /* Smooth scrolling */
 html {
+  background-color: oklch(0.97 0 0);
   scroll-behavior: smooth;
 }
 
