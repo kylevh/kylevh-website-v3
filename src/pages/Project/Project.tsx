@@ -1,5 +1,4 @@
 import { useParams } from "react-router";
-import { Suspense, lazy } from "react";
 import { projects } from "./ProjectData";
 import Error from "../Error";
 import Tamagrow from "./ProjectPages/tamagrow";

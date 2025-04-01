@@ -7,6 +7,8 @@ import Project from "../pages/Project/Project";
 import Navbar from "../components/Navbar/Navbar";
 import Lenis from '@studio-freight/lenis'
 import { useEffect } from "react";
+import Blog from "../pages/Blog/Blog";
+import BlogPost from "../pages/Blog/BlogPost";
 
 function App() {
   useEffect(() => {
@@ -38,6 +40,8 @@ function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/project/:id" element={<Project />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:id" element={<BlogPost />} />
             </Routes>
           </AnimatePresence>
         </main>

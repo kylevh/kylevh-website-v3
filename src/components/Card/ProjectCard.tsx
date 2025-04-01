@@ -28,7 +28,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <p className="text-neutral-400">{project.description}</p>
 
       {/* Project Links */}
-      <Link to={(project.link) || "/"} className="flex w-full">
+      <Link to={`/project/${project.id}`} className="flex w-full">
         <button className="bg-neutral-200 flex-1 text-neutral-900 px-4 py-2 rounded-md hover:bg-neutral-300 transition-colors">
           view
         </button>

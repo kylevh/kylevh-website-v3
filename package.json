@@ -1,8 +1,20 @@
 {
   "name": "kylevh-v3",
+  "description": "Kyle Huynh's portfolio website",
+  "author": "Kyle Huynh",
+  "license": "MIT",
+  "homepage": "https://kylevh.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kylevh/kylevh-v3.git"
+  },
   "private": true,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20.18.3",
+    "npm": ">=10.8.2"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
