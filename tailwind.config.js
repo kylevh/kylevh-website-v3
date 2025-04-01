@@ -5,7 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Reddit Sans", "sans-serif"],
+        sansCondensed: ["Reddit Sans Condensed", "sans-serif"],
+        mono: ["Reddit Mono", "monospace"],
+      },
+    },
   },
   plugins: [],
 }
