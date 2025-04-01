@@ -25,6 +25,8 @@
     "Helvetica Neue", Arial, sans-serif;
   --font-mono: "Reddit Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
+
+    background-color: red;
 }
 
 /* Dark mode variables */
@@ -48,7 +50,7 @@ body {
   font-family: var(--font-mono);
   font-weight: light;
   color: var(--color-text);
-  background-color: white;
+  background-color: oklch(0.97 0 0);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
