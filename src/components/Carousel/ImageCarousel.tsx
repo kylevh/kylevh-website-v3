@@ -156,6 +156,7 @@ export default function ImageCarousel({
       role="region"
       aria-label="Image carousel"
       aria-roledescription="carousel"
+      aria-live="polite"
     >
       {!isCurrentImageLoaded && (
         <div className="absolute inset-0 animate-pulse bg-gray-200" />
@@ -172,8 +173,9 @@ export default function ImageCarousel({
         >
           <motion.img
             src={images[currentIndex]}
-            alt={`Slide ${currentIndex + 1}`}
-            className="w-full h-full object-contain p-4 rounded-lg cursor-zoom-in select-none"
+            alt={`Slide ${currentIndex + 1} of ${images.length}`}
+            aria-current={true}
+            className="w-full h-full object-contain p-4 rounded-lg cursor-zoom-in select-none flex items-center justify-center text-center"
             {...imageVariants}
             onClick={() => setIsModalOpen(true)}
             draggable={false}

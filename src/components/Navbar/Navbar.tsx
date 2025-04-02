@@ -40,6 +40,8 @@ const Navbar = () => {
       initial={{ opacity: 0, y: -100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      aria-label="Main navigation"
+      role="navigation"
     >
       <div
         className={`flex py-3 px-4 justify-between items-center relative rounded-xl transition-all duration-200 ${
@@ -105,7 +107,7 @@ const Navbar = () => {
 // Memoized desktop navigation component
 const DesktopNav = memo(() => (
   <>
-    <div className="hidden md:flex items-center space-x-6">
+    <div className="hidden md:flex items-center space-x-6" role="menubar">
       <NavLink to="/">home</NavLink>
       <NavLink to="/projects">projects</NavLink>
       <NavLink to="/contact">contact</NavLink>
@@ -137,6 +139,9 @@ const MobileMenuButton = memo(
         closed: { rotate: 0 },
       }}
       transition={{ duration: 0.2 }}
+      aria-expanded={isOpen}
+      aria-controls="mobile-menu"
+      aria-label="Toggle navigation menu"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -177,6 +182,9 @@ const MobileMenu = memo(
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
           className="fixed top-0 left-0 w-screen h-screen bg-neutral-950/90 backdrop-blur-md z-[50]"
+          id="mobile-menu"
+          role="menu"
+          aria-label="Mobile navigation menu"
         >
           <div className="flex flex-col items-center justify-center h-full">
             <div className="flex flex-col items-center space-y-8">

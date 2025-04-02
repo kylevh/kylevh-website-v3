@@ -21,7 +21,7 @@ const Project = () => {
   }
 
   return (
-    <motion.section className="flex-1 w-full max-w-5xl h-full grid gap-3 p-3 grid-cols-1 md:grid-cols-2 md:place-content-center"
+    <motion.article className="flex-1 w-full max-w-5xl h-full grid gap-3 p-3 grid-cols-1 md:grid-cols-2 md:place-content-center"
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{
@@ -30,7 +30,7 @@ const Project = () => {
     }}
     >
       <ProjectComponent project={projectData} />
-    </motion.section>
+    </motion.article>
   );
 };
 

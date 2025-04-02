@@ -29,10 +29,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Project Links */}
       <Link to={`${project.link}`} className="flex w-full">
-        <button className="bg-neutral-200 flex-1 text-neutral-900 px-4 py-2 rounded-md hover:bg-neutral-300 transition-colors">
+        <button className="bg-neutral-200 flex-1 text-neutral-900 px-4 py-2 rounded-md hover:bg-neutral-300 transition-colors"
+        aria-label={`View ${project.title} project`}
+        >
           view
         </button>
       </Link>
     </Card>
   );
 }
+

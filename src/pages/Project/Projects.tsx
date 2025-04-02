@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { projects } from "./ProjectData";
 import ProjectCard from "../../components/Card/ProjectCard";
+import { useDocumentTitle } from "../../lib/useDocumentTitle";
 
 const Projects = () => {
+  useDocumentTitle("projects | kyle huynh");
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

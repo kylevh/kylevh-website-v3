@@ -8,22 +8,22 @@ export const projects: Project[] = [
   {
     id: "tamagrow",
     title: "tamagrow.io",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. uisquam, quos. lorem ipsum deloa teu eu amo",
-    tags: ["React", "TypeScript", "Tailwind"],
+    description: "Venture-backed desktop overlay app leveraging real-time game telemetry to power a cute interactive companion.",
+    tags: ["React.js", "AWS", "Overwolf"],
     link: "/projects/tamagrow"
   },
   {
     id: "ozplay",
     title: "ozplay",
     description: "lorem ipsum dolor sit amet consectetur adipisicing elit. uisquam, quos. lorem ipsum deloa teu eu amo",
-    tags: ["C", "Electron", "TypeScript"],
+    tags: ["C++", "Electron"],
     link: "/projects/ozplay"
   },
   {
     id: "affordability-testing-tool",
     title: "college affordability testing tool",
     description: "lorem ipsum dolor sit amet consectetur adipisicing elit. uisquam, quos. lorem ipsum deloa teu eu amo",
-    tags: ["AWS", "Python", "Django", "Javascript"],
+    tags: [ "Python",  "Javascript", "AWS"],
     link: "/projects/affordability-testing-tool"
   },
   {
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     id: "corpsebound",
     title: "corpsebound",
     description: "lorem ipsum dolor sit amet consectetur adipisicing elit. uisquam, quos. lorem ipsum deloa teu eu amo",
-    tags: ["Unity3D", "C#"],
+    tags: ["C#", "Unity3D"],
     link: "/projects/corpsebound"
   },
   

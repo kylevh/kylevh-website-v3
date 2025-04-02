@@ -15,11 +15,13 @@ const cardVariants = {
   }
 };
 
-export default function Card({ children, className, whileHover }: HTMLMotionProps<"div">) {
+export default function Card({ children, className, whileHover, title }: HTMLMotionProps<"div">) {
   return (
     <motion.div
       className={`bg-white rounded-xl gap-4 w-full max-h-52 p-4 flex flex-col 
       items-start justify-between text-neutral-950 font-mono text-sm font-medium ${className}`}
+      role="article"
+      aria-label={title || "Content card"}
       variants={cardVariants}
       whileHover={whileHover || {
         boxShadow: "0 2px 4px -1px rgb(0 0 0 / 0.05), 0 2px 4px -1px rgb(0 0 0 / 0.05)",

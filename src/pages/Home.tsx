@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import Card from "../components/Card/Card";
 import { Link } from "react-router";
+import { useDocumentTitle } from "../lib/useDocumentTitle";
 
 const Home = () => {
+  useDocumentTitle("kyle huynh | software developer");
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -60,12 +62,18 @@ const Home = () => {
         <p>contact</p>
         <div className="flex w-full gap-2">
           <Link to="mailto:kylevh@outlook.com" className="flex w-full">
-            <button className="bg-neutral-200 flex-1 text-neutral-900 px-4 py-2 rounded-md hover:bg-neutral-300 transition-colors">
+            <button 
+              className="bg-neutral-200 flex-1 text-neutral-900 px-4 py-2 rounded-md hover:bg-neutral-300 transition-colors"
+              aria-label="Send email to Kyle Huynh"
+            >
               e-mail
             </button>
           </Link>
           <Link to="https://github.com/kylevh" className="flex w-full">
-            <button className="bg-neutral-200 flex-1 text-neutral-900 px-4 py-2 rounded-md hover:bg-neutral-300 transition-colors">
+            <button 
+              className="bg-neutral-200 flex-1 text-neutral-900 px-4 py-2 rounded-md hover:bg-neutral-300 transition-colors"
+              aria-label="Visit Kyle Huynh's GitHub profile"
+            >
               github
             </button>
           </Link>
@@ -75,11 +83,14 @@ const Home = () => {
       {/* Third row - second column */}
       <Card className="md:col-start-2">
         <p>work</p>
-        <div className="flex w-full gap-2">
-          <button className="bg-neutral-200 flex-1 text-neutral-900 px-4 py-2 rounded-md hover:bg-neutral-300 transition-colors">
+        <Link to="https://drive.google.com/file/d/1S7QjsMbKAA26OfOHx2F7qX10WtZUMsLy/view?usp=sharing" target="_blank" className="flex w-full gap-2">
+          <button 
+            className="bg-neutral-200 flex-1 text-neutral-900 px-4 py-2 rounded-md hover:bg-neutral-300 transition-colors"
+            aria-label="View Kyle Huynh's resume"
+          >
             view
           </button>
-        </div>
+        </Link>
       </Card>
     </motion.section>
   );
