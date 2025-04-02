@@ -1,5 +1,5 @@
 import { AnimatePresence } from "framer-motion";
-import { BrowserRouter as Router, Routes, Route, ScrollRestoration } from "react-router";
+import { BrowserRouter as Router, Routes, Route } from "react-router";
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import Projects from "../pages/Project/Projects";
@@ -8,13 +8,15 @@ import Navbar from "../components/Navbar/Navbar";
 import Blog from "../pages/Blog/Blog";
 import BlogPost from "../pages/Blog/BlogPost";
 import Error from "../pages/Error";
+import ScrollToTop from "../lib/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen w-full flex flex-col bg-neutral-100">
+        <ScrollToTop />
         <main className="flex-1 flex flex-col w-full items-center pt-16">
-        <Navbar />
+          <Navbar />
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<Home />} />
@@ -26,7 +28,6 @@ function App() {
               <Route path="*" element={<Error />} />
             </Routes>
           </AnimatePresence>
-          <ScrollRestoration />
         </main>
       </div>
     </Router>
