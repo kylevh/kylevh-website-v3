@@ -1,5 +1,5 @@
 import { AnimatePresence } from "framer-motion";
-import { BrowserRouter as Router, Routes, Route } from "react-router";
+import { BrowserRouter as Router, Routes, Route, ScrollRestoration } from "react-router";
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import Projects from "../pages/Project/Projects";
@@ -26,6 +26,7 @@ function App() {
               <Route path="*" element={<Error />} />
             </Routes>
           </AnimatePresence>
+          <ScrollRestoration />
         </main>
       </div>
     </Router>
