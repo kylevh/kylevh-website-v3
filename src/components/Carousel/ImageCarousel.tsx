@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useMemo, memo, useRef } from 'react';
-import { motion, AnimatePresence, PanInfo } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface ImageCarouselProps {
   images: string[];
@@ -45,7 +45,6 @@ export default function ImageCarousel({
   className = "" 
 }: ImageCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
   const [direction, setDirection] = useState(0);
@@ -69,7 +68,7 @@ export default function ImageCarousel({
 
   // Add keyboard navigation
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
+    const handleKeyDown = () => {
       if (document.activeElement?.tagName === 'BUTTON') return;
     };
 
@@ -79,13 +78,13 @@ export default function ImageCarousel({
 
   // Optimize autoplay effect
   useEffect(() => {
-    if (!isAutoPlaying || images.length <= 1 || isModalOpen) {
+    if (images.length <= 1 || isModalOpen) {
       return;
     }
 
     const intervalId = setInterval(nextSlide, interval);
     return () => clearInterval(intervalId);
-  }, [isAutoPlaying, interval, nextSlide, images.length, isModalOpen]);
+  }, [interval, nextSlide, images.length, isModalOpen]);
 
   // Optimize image preloading
   useEffect(() => {
