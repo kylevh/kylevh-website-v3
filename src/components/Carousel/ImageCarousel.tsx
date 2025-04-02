@@ -100,17 +100,17 @@ export default function ImageCarousel({
   }, [handleManualNavigation, nextSlide, prevSlide]);
 
   // Enhanced drag gesture handlers
-  const handleDragStart = useCallback((e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+  const handleDragStart = useCallback((_e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     setDragStart(info.point.x);
     setIsAutoPlaying(false);
   }, []);
 
-  const handleDrag = useCallback((e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+  const handleDrag = useCallback(() => {
     // Optional: Add visual feedback during drag
     // The motion.div will handle this automatically
   }, []);
 
-  const handleDragEnd = useCallback((e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+  const handleDragEnd = useCallback((_e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const dragDistance = info.point.x - dragStart;
     const threshold = 50; // minimum distance for swipe
 
@@ -237,12 +237,12 @@ export default function ImageCarousel({
         <NavigationButton 
           direction="left" 
           onClick={() => !isTransitioning && handleManualNavigation(prevSlide)}
-          aria-label="Previous slide"
+          ariaLabel="Previous slide"
         />
         <NavigationButton 
           direction="right" 
           onClick={() => !isTransitioning && handleManualNavigation(nextSlide)}
-          aria-label="Next slide"
+          ariaLabel="Next slide"
         />
       </div>
 
@@ -253,8 +253,8 @@ export default function ImageCarousel({
               key={index}
               active={index === currentIndex}
               onClick={() => !isTransitioning && handleManualNavigation(() => setCurrentIndex(index))}
-              aria-label={`Go to slide ${index + 1}`}
-              aria-selected={index === currentIndex}
+              ariaLabel={`Go to slide ${index + 1}`}
+              ariaSelected={index === currentIndex}
               role="tab"
             />
           ))}
