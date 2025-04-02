@@ -51,7 +51,6 @@ export default function ImageCarousel({
   const [direction, setDirection] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [dragStart, setDragStart] = useState(0);
 
   // Memoize navigation functions
   const nextSlide = useCallback(() => {
@@ -68,60 +67,15 @@ export default function ImageCarousel({
     setCurrentIndex(prev => (prev - 1 + images.length) % images.length);
   }, [images.length, isTransitioning]);
 
-  // Memoize manual navigation handler
-  const handleManualNavigation = useCallback((action: () => void) => {
-    setIsAutoPlaying(false);
-    action();
-  }, []);
-
-  // Memoize mouse event handlers
-  const handleMouseEnter = useCallback(() => {
-    setIsAutoPlaying(false);
-  }, []);
-
-  const handleMouseLeave = useCallback(() => {
-    setIsAutoPlaying(true);
-  }, []);
-
   // Add keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (document.activeElement?.tagName === 'BUTTON') return;
-      
-      if (e.key === 'ArrowLeft') {
-        handleManualNavigation(prevSlide);
-      } else if (e.key === 'ArrowRight') {
-        handleManualNavigation(nextSlide);
-      }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [handleManualNavigation, nextSlide, prevSlide]);
-
-  // Enhanced drag gesture handlers
-  const handleDragStart = useCallback((_e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-    setDragStart(info.point.x);
-    setIsAutoPlaying(false);
-  }, []);
-
-  const handleDrag = useCallback(() => {
-    // Optional: Add visual feedback during drag
-    // The motion.div will handle this automatically
-  }, []);
-
-  const handleDragEnd = useCallback((_e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-    const dragDistance = info.point.x - dragStart;
-    const threshold = 50; // minimum distance for swipe
-
-    if (Math.abs(dragDistance) > threshold) {
-      if (dragDistance > 0) {
-        handleManualNavigation(prevSlide);
-      } else {
-        handleManualNavigation(nextSlide);
-      }
-    }
-  }, [handleManualNavigation, nextSlide, prevSlide, dragStart]);
+  }, [nextSlide, prevSlide]);
 
   // Optimize autoplay effect
   useEffect(() => {
@@ -200,8 +154,6 @@ export default function ImageCarousel({
     <div 
       ref={containerRef}
       className={`relative w-full h-64 md:h-96 overflow-hidden rounded-lg bg-[#ececec] ${className}`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       role="region"
       aria-label="Image carousel"
       aria-roledescription="carousel"
@@ -216,9 +168,6 @@ export default function ImageCarousel({
           drag="x"
           dragElastic={0.3}
           dragConstraints={{ left: 0, right: 0 }}
-          onDragStart={handleDragStart}
-          onDrag={handleDrag}
-          onDragEnd={handleDragEnd}
           className="w-full h-full touch-pan-y"
           style={{ touchAction: 'pan-y' }}
         >
@@ -236,12 +185,12 @@ export default function ImageCarousel({
       <div className="absolute inset-0 flex items-center justify-between p-4">
         <NavigationButton 
           direction="left" 
-          onClick={() => !isTransitioning && handleManualNavigation(prevSlide)}
+          onClick={() => !isTransitioning && prevSlide()}
           ariaLabel="Previous slide"
         />
         <NavigationButton 
           direction="right" 
-          onClick={() => !isTransitioning && handleManualNavigation(nextSlide)}
+          onClick={() => !isTransitioning && nextSlide()}
           ariaLabel="Next slide"
         />
       </div>
@@ -252,7 +201,7 @@ export default function ImageCarousel({
             <DotIndicator
               key={index}
               active={index === currentIndex}
-              onClick={() => !isTransitioning && handleManualNavigation(() => setCurrentIndex(index))}
+              onClick={() => !isTransitioning && setCurrentIndex(index)}
               ariaLabel={`Go to slide ${index + 1}`}
               ariaSelected={index === currentIndex}
               role="tab"

@@ -12,8 +12,8 @@ import Error from "../pages/Error";
 function App() {
   return (
     <Router>
-      <div className="h-screen w-full flex flex-col overflow-x-hidden bg-neutral-100">
-        <main className="flex-1 flex flex-col h-full w-full items-center pt-16 ">
+      <div className="h-screen w-full flex flex-col overflow-x-hidden overflow-y-auto bg-neutral-100">
+        <main className="flex-1 flex flex-col h-auto w-full items-center pt-16">
         <Navbar />
           <AnimatePresence mode="wait">
             <Routes>
