@@ -1,4 +1,4 @@
-import { motion, HTMLMotionProps } from "framer-motion";
+import { motion } from "framer-motion";
 
 const cardVariants = {
   hidden: { 
@@ -15,15 +15,14 @@ const cardVariants = {
   }
 };
 
-export default function Card({ children, className, whileHover }: HTMLMotionProps<"div">) {
+export default function ProjectTextCard({ children, className }: { children: React.ReactNode, className?: string }) {
   return (
     <motion.div
-      className={`bg-white rounded-xl gap-4 w-full max-h-52 p-4 flex flex-col 
+      className={`bg-white rounded-xl gap-4 w-full p-4 flex flex-col 
       items-start justify-between text-neutral-950 font-mono text-sm font-medium ${className}`}
       variants={cardVariants}
-      whileHover={whileHover || {
-        boxShadow: "0 2px 4px -1px rgb(0 0 0 / 0.05), 0 2px 4px -1px rgb(0 0 0 / 0.05)",
-        y: -3,
+      whileHover={{
+        y: -4,
         transition: {
           duration: 0.3,
           ease: [0.22, 1, 0.36, 1]

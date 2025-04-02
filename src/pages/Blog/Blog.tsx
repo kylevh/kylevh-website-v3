@@ -18,7 +18,7 @@ const Blog = () => {
 
   return (
     <motion.section
-      className="flex-1 w-full max-w-7xl h-full grid gap-3 p-3 grid-cols-1 md:grid-cols-4 md:place-content-center"
+        className="flex-1 w-full max-w-7xl h-full grid gap-3 p-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:place-content-center "
       variants={containerVariants}
       initial="hidden"
       animate="visible"

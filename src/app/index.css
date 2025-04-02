@@ -25,8 +25,6 @@
     "Helvetica Neue", Arial, sans-serif;
   --font-mono: "Reddit Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
-
-    background-color: red;
 }
 
 /* Dark mode variables */
@@ -136,6 +134,6 @@ a:hover {
 
 /* Selection color */
 ::selection {
-  background-color: var(--color-primary);
+  background-color: #737373;
   color: white;
 }

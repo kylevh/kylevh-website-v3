@@ -18,13 +18,13 @@ const Home = () => {
 
   return (
     <motion.section
-      className="flex-1 w-full max-w-5xl h-full grid gap-3 p-3 grid-cols-1 md:grid-cols-4 md:place-content-center "
+      className="flex-1 w-full max-w-5xl h-full grid gap-3 p-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-4  md:place-content-center "
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
       {/* First row - middle two columns */}
-      <Card className="md:col-start-2">
+      <Card className="md:col-start-1 lg:col-start-2">
         <p>kyle huynh</p>
         <p className="text-neutral-400 ">software developer</p>
       </Card>
@@ -32,8 +32,7 @@ const Home = () => {
       <Card>
         <p>about</p>
         <p className="text-neutral-400 ">
-          lorem ipsum dolor sit amet consectetur adipisicing elit. porro itaque
-          eum delectus unde architecto reprehenderit
+        progressive developer, continuously evolving with new insights and creative approaches
         </p>
         <p>seattle, wa</p>
       </Card>

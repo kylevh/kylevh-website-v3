@@ -1,22 +1,45 @@
 import { memo, useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AnimatePresence, motion } from "framer-motion";
 
-const formattedDate = new Intl.DateTimeFormat('en-US', {
-  weekday: 'long',
-  month: 'long',
-  day: 'numeric',
-  year: 'numeric'
-}).format(new Date()).toLowerCase();
+const formattedDate = new Intl.DateTimeFormat("en-US", {
+  weekday: "long",
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+})
+  .format(new Date())
+  .toLowerCase();
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Determine if we should show back button
+  const showBackButton = location.pathname !== "/";
+
+  // Handle back navigation
+  const handleBack = () => {
+    // Get the current path segments
+    const pathSegments = location.pathname.split('/').filter(Boolean);
+    
+    if (pathSegments.length > 1) {
+      // If we're in a nested route, go up one level
+      const parentPath = '/' + pathSegments.slice(0, -1).join('/');
+      navigate(parentPath);
+    } else {
+      // If we're only one level deep, go to home
+      navigate('/');
+    }
+  };
 
   return (
-    <motion.nav className="fixed top-0 left-0 right-0 p-3 z-[100]"
-    initial={{ opacity: 0, y: -100 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1]  }}
+    <motion.nav
+      className="fixed top-0 left-0 right-0 p-3 z-[100]"
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
     >
       <div
         className={`flex py-3 px-4 justify-between items-center relative rounded-xl transition-all duration-200 ${
@@ -25,14 +48,37 @@ const Navbar = () => {
       >
         {/* Logo/Home Link */}
         <div className="flex-1 flex justify-start">
-          <Link
-            className="text-white font-mono text-sm font-medium z-[200]"
-            to="/"
-          >
-            <p className="text-white font-mono text-sm font-medium z-[200]">
-              kylevh.com
-            </p>
-          </Link>
+          {showBackButton ? (
+            <button
+              onClick={handleBack}
+              className="text-white font-mono text-sm font-medium z-[200] hover:text-neutral-400 transition-colors flex items-center gap-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-4 h-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+                />
+              </svg>
+              back
+            </button>
+          ) : (
+            <Link
+              className="text-white font-mono text-sm font-medium z-[200]"
+              to="/"
+            >
+              <p className="text-white font-mono text-sm font-medium z-[200]">
+                kylevh.com
+              </p>
+            </Link>
+          )}
         </div>
 
         <div className="hidden md:flex flex-1 justify-center">
