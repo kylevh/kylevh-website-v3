@@ -1,6 +1,6 @@
 import { Project } from "../../../types/constants";
 import Card from "../../../components/Card/Card";
-import image1 from "/src/assets/projects/kualNotes/1.webp";
+import image1 from "/src/assets/projects/kualnotes/1.webp";
 
 import { useDocumentTitle } from "../../../lib/useDocumentTitle";
 import SingleImage from "../../../components/Carousel/ImageSingle";
