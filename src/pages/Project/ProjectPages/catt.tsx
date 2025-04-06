@@ -6,12 +6,8 @@ import image2 from "/src/assets/projects/catt/2.webp";
 import image3 from "/src/assets/projects/catt/3.webp";
 import image4 from "/src/assets/projects/catt/4.webp";
 
-import { useDocumentTitle } from "../../../lib/useDocumentTitle";
-
 export default function catt({ project }: { project: Project }) {
   const cattImages = [image1, image2, image3, image4];
-  useDocumentTitle("kyle huynh | " + project.title);
-  
   return (
     <>
       <Card className="md:col-span-2 max-h-fit">
