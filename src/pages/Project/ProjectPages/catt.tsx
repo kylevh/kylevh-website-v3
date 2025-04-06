@@ -31,7 +31,7 @@ export default function catt({ project }: { project: Project }) {
       <Card className="max-h-fit md:col-start-2">
         <p>role</p>
         <p className="text-neutral-500">
-          Worked in a full stack capacity to develop a user-friendly testing interface using Django, Python, CSS, HTML, and JavaScript, streamlining the testing process for the College Affordability Application.
+          developed a web-based testing interface using Django, Python, CSS, HTML, and JavaScript.
         </p>
       </Card>
 
