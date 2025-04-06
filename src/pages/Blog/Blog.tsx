@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import BlogCard from "../../components/Card/BlogCard";
 import { blogPosts } from "./BlogData";
+import { useDocumentTitle } from "../../lib/useDocumentTitle";
 
 const Blog = () => {
+  useDocumentTitle("kyle huynh | blog");
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

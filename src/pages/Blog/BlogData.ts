@@ -9,7 +9,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "fsm-tutorial",
     title: "Building a Finite State Machine in C# & Unity",
-    date: "2025-04-01",
+    date: "2025-04-03",
     preview: "A guide on optimizing your state management in Unity using Finite State Machines.",
     tags: ["Unity", "C#"],
   },

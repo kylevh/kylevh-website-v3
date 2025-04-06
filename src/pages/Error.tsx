@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useDocumentTitle } from "../lib/useDocumentTitle";
 
 export default function Error() {
+    useDocumentTitle("kyle huynh | uh oh");
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {

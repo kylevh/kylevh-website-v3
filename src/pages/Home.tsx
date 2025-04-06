@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import { useDocumentTitle } from "../lib/useDocumentTitle";
 
 const Home = () => {
-  useDocumentTitle("kyle huynh | software developer");
+  useDocumentTitle("kyle huynh | home");
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

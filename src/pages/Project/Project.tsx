@@ -1,10 +1,17 @@
 import { useParams, Navigate } from "react-router";
 import { projects } from "./ProjectData";
-import Tamagrow from "./ProjectPages/tamagrow";
 import { motion } from "framer-motion";
 
+// Project Pages
+import Tamagrow from "./ProjectPages/tamagrow";
+import CATT from "./ProjectPages/catt";
+import KualNotes from "./ProjectPages/kualnotes";
+import CorpseBound from "./ProjectPages/corpsebound";
 const PROJECT_COMPONENTS = {
   tamagrow: Tamagrow,
+  catt: CATT,
+  kualnotes: KualNotes,
+  corpsebound: CorpseBound,
 } as const;
 
 

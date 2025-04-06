@@ -8,38 +8,37 @@ export const projects: Project[] = [
   {
     id: "tamagrow",
     title: "tamagrow.io",
-    description: "Venture-backed desktop overlay app leveraging real-time game telemetry to power a cute interactive companion.",
+    description: "venture-backed desktop overlay app leveraging real-time game telemetry to power a cute interactive companion",
     tags: ["React.js", "AWS", "Overwolf"],
     link: "/projects/tamagrow"
   },
+  // {
+  //   id: "ozplay",
+  //   title: "ozplay",
+  //   description: "native game overlay that transforms queue times into social gaming moments with friends through community-built minigames",
+  //   tags: ["C#", "Electron"],
+  //   link: "/projects/ozplay"
+  // },
   {
-    id: "ozplay",
-    title: "ozplay",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. uisquam, quos. lorem ipsum deloa teu eu amo",
-    tags: ["C++", "Electron"],
-    link: "/projects/ozplay"
-  },
-  {
-    id: "affordability-testing-tool",
+    id: "catt",
     title: "college affordability testing tool",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. uisquam, quos. lorem ipsum deloa teu eu amo",
+    description: "django-powered testing platform that automates script execution and simplifies file management workflows",
     tags: [ "Python",  "Javascript", "AWS"],
-    link: "/projects/affordability-testing-tool"
-  },
-  {
-    id: "kualnotes",
-    title: "kual.notes",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. uisquam, quos. lorem ipsum deloa teu eu amo",
-    tags: ["React", "Python"],
-    link: "/projects/kualnotes"
+    link: "/projects/catt"
   },
   {
     id: "corpsebound",
     title: "corpsebound",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. uisquam, quos. lorem ipsum deloa teu eu amo",
+    description: "unity-built video game where death becomes a strategic mechanic to progress through levels",
     tags: ["C#", "Unity3D"],
     link: "/projects/corpsebound"
   },
-  
-  // Add more projects here...
+  {
+    id: "kualnotes",
+    title: "kual.notes",
+    description: "smart journaling app that uses AI to convert mental health reflections into actionable wellness guidance",
+    tags: ["React", "Python"],
+    link: "/projects/kualnotes"
+  },
+
 ];

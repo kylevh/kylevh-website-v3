@@ -1,6 +1,8 @@
 import Card from "../../../components/Card/Card";
+import { useDocumentTitle } from "../../../lib/useDocumentTitle";
 
 export const FSMTutorial = () => {
+  useDocumentTitle("kyle huynh | finite state machine tutorial");
   return (
     <>
       <Card className="col-start-1 col-span-1 !justify-center  max-h-fit items-center"

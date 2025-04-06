@@ -19,7 +19,7 @@ export default function Card({ children, className, whileHover, title }: HTMLMot
   return (
     <motion.div
       className={`bg-white rounded-xl gap-4 w-full max-h-52 p-4 flex flex-col 
-      items-start justify-between text-neutral-950 font-mono text-sm font-medium ${className}`}
+      items-start justify-between text-neutral-950 font-mono text-sm font-medium  ${className}`}
       role="article"
       aria-label={title || "Content card"}
       variants={cardVariants}
