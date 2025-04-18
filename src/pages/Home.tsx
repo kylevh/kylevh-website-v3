@@ -83,7 +83,8 @@ const Home = () => {
       {/* Third row - second column */}
       <Card className="md:col-start-2">
         <p>work</p>
-        <Link to="https://drive.google.com/file/d/1S7QjsMbKAA26OfOHx2F7qX10WtZUMsLy/view?usp=sharing" target="_blank" className="flex w-full gap-2">
+        {/* target="_blank"  */}
+        <Link to="" className="flex w-full gap-2"> 
           <button 
             className="bg-neutral-200 flex-1 text-neutral-900 px-4 py-2 rounded-md hover:bg-neutral-300 transition-colors"
             aria-label="View Kyle Huynh's resume"
